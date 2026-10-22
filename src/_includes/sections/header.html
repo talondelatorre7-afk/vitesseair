@@ -1,16 +1,15 @@
 <!-- ============================================ -->
-<!--                  Navigation                  -->
+<!--            VITESSE AIR HEADER                -->
 <!-- ============================================ -->
 
 <header id="cs-navigation">
     <div class="cs-container">
-        
-        <!-- JPT IMAGE LOGO -->
-        <!-- HOW TO TWEAK LOGO SIZE: Adjust the "max-width" value below (currently 65px) -->
-        <a href="/" class="cs-logo" aria-label="JPT Home" style="width: 100%; max-width: 65px;">
-            <img src="/assets/images/JPT-white-solid.png" alt="JPT Protection & Transportation Logo" width="65" height="65" style="width: 100%; height: auto; display: block;">
+        <!-- LOGO -->
+        <a href="/" class="cs-logo" aria-label="Vitesse Air Home">
+            VITESSE<span>AIR</span>
         </a>
         
+        <!-- NAV MENU -->
         <nav class="cs-nav" aria-label="main navigation">
             <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
                 <span class="cs-box" aria-hidden="true">
@@ -22,24 +21,49 @@
             <div class="cs-ul-wrapper" id="cs-ul-wrapper" inert>
                 <ul id="cs-expanded" class="cs-ul">
                     <li class="cs-li">
-                        <a href="/" class="cs-li-link">Home</a>
+                        <a href="/" class="cs-li-link cs-active">Home</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/protection/" class="cs-li-link">Protection</a>
+                        <a href="/#capabilities" class="cs-li-link">Capabilities</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/logistics/" class="cs-li-link">Logistics</a>
+                        <a href="/#tarmac-spotlight" class="cs-li-link">Tarmac Logistics</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/capabilities/" class="cs-li-link">Capabilities</a>
-                    </li>
-                    <li class="cs-li cs-hide-on-desktop">
-                        <a href="/contact/" class="cs-li-link">Contact</a>
+                        <a href="/#booking-portal" class="cs-li-link">Flight Portal</a>
                     </li>
                 </ul>
             </div>
         </nav>
         
-        <a href="/contact/" class="header-cta cs-hide-on-mobile">Request a Detail</a>
+        <!-- DESKTOP CTA BUTTON -->
+        <a href="/#booking-portal" class="header-cta cs-hide-on-mobile">Request Flight</a>
     </div>
 </header>
+
+<!-- DIRECT SCRIPT TO POWER THE BURGER & ANIMATION -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.getElementById('cs-navigation');
+        const toggle = document.getElementById('cs-toggle');
+        const wrapper = document.getElementById('cs-ul-wrapper');
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('cs-active');
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                if (wrapper) wrapper.inert = isExpanded;
+            });
+
+            // Close menu when clicking any nav link
+            document.querySelectorAll('.cs-li-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('cs-active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    if (wrapper) wrapper.inert = true;
+                });
+            });
+        }
+    });
+</script>

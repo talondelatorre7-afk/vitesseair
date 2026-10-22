@@ -1,172 +1,208 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// HOME PAGE STYLES (DEEP NAVY & GOLD)
+// HOME PAGE STYLES - PURE OBSIDIAN BLACK
 // ─────────────────────────────────────────────────────────────────────────────
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #RPsbs-313,
-    #RPsbsr-313 {
-        padding: var(--sectionPadding);
+/* 1. HERO SECTION */
+#hero-vitesse {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 1.25rem 4rem 1.25rem;
+    background: #030508;
+    overflow: hidden;
+    box-sizing: border-box;
 
-        .cs-container {
-            width: 100%; max-width: calc(1280 / 16 * 1rem); margin: auto;
-            display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 6vw, 4rem);
-        }
+    .hero-bg-overlay {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(180deg, rgba(3,5,8,0.4) 0%, rgba(3,5,8,0.85) 80%, #030508 100%);
+        z-index: 2;
+    }
 
-        .cs-content {
-            text-align: left; width: 100%; max-width: calc(542 / 16 * 1rem);
-            display: flex; flex-direction: column; align-items: flex-start;
-        }
+    .hero-video {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        object-fit: cover; z-index: 1;
+    }
 
-        .cs-text {
-            margin-bottom: calc(16 / 16 * 1rem);
-            &:last-of-type { margin-bottom: calc(32 / 16 * 1rem); }
-        }
+    .hero-content {
+        position: relative; z-index: 3; max-width: 58rem; margin: 0 auto; text-align: center;
+    }
 
-        .cs-quote {
-            margin: 0 0 calc(32 / 16 * 1rem) 0; padding: clamp(1rem, 3vw, 2rem);
-            background-color: var(--medium); border-radius: calc(16 / 16 * 1rem); position: relative;
-        }
-
-        .cs-quote-text {
-            font-size: clamp(0.875rem, 1.5vw, 1rem); line-height: 1.5em;
-            margin: 0 0 calc(16 / 16 * 1rem); color: #cbd5e1; display: block;
-        }
-
-        .cs-name {
-            font-size: calc(16 / 16 * 1rem); line-height: 1.2em; text-transform: uppercase;
-            font-weight: bold; margin: 0 0 calc(4 / 16 * 1rem); color: var(--headerColor); display: block;
-        }
-
-        .cs-job { font-size: calc(14 / 16 * 1rem); line-height: 1.5em; color: #94a3b8; display: block; }
-
-        .cs-quote-icon {
-            width: clamp(3.75rem, 10vw, 8.5rem); height: auto; position: absolute;
-            bottom: calc(0 / 16 * 1rem); right: clamp(1rem, 4vw, 2rem); opacity: 0.2;
-        }
-
-        .cs-image-group {
-            font-size: min(2.31vw, 0.7em); width: calc(631 / 16 * 1em); height: calc(636 / 16 * 1em); position: relative;
-        }
-
-        .cs-picture {
-            border-radius: calc(24 / 16 * 1em); overflow: hidden; position: absolute; display: block;
-            img { position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: cover; }
-        }
-
-        .cs-picture1 { width: calc(522 / 16 * 1em); height: calc(581 / 16 * 1em); left: 0; top: 0; }
-
-        .cs-picture2 {
-            width: calc(414 / 16 * 1em); height: calc(400 / 16 * 1em); background-color: var(--dark);
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 40px; border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-            right: 0; bottom: 0;
-        }
-
-        .cs-standalone-picture {
-            position: relative; display: block; width: 100%; max-width: calc(522 / 16 * 1em); 
-            height: auto; aspect-ratio: 522 / 581; margin: 0 auto; 
-            border-radius: calc(24 / 16 * 1em); overflow: hidden;
-            img { position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: contain; }
-        }
+    .hero-cta-group {
+        display: flex; justify-content: center; align-items: center; gap: 1.25rem;
+        flex-wrap: wrap; margin-top: 2.5rem; width: 100%;
     }
 }
 
-/* Standalone Video */
-.cs-standalone-video {
-    position: relative; display: block; width: 100%; max-width: calc(522 / 16 * 1em); 
-    height: auto; aspect-ratio: 522 / 581; margin: 0 auto; 
-    border-radius: calc(24 / 16 * 1em); overflow: hidden; background-color: #020c1b; 
-    .cs-video-element {
-        position: absolute; top: 0; left: 0; height: 100%; width: 100%;
-        object-fit: cover; object-position: center; border: none;
+/* 2. METRICS BAR (OBSIDIAN DARK) */
+#metrics-bar {
+    background: #030508;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 2.5rem 1.25rem;
+
+    .metrics-grid {
+        max-width: 85rem; margin: 0 auto; display: grid;
+        grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; text-align: center;
+    }
+
+    .metric-card { display: flex; flex-direction: column; align-items: center; }
+    
+    .metric-val {
+        font-family: var(--headerFont); font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        color: var(--primary); font-weight: 600; letter-spacing: 0.1em; margin-bottom: 0.25rem;
+    }
+
+    .metric-key {
+        font-family: var(--bodyFont); font-size: 0.7rem; color: var(--text-muted);
+        text-transform: uppercase; letter-spacing: 0.15em;
     }
 }
 
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #RPsbs-313, #RPsbsr-313 {
-        .cs-container { flex-flow: row; justify-content: space-between; gap: calc(52 / 16 * 1rem); }
-        .cs-image-group { font-size: min(1.2vw, 1em); flex: none; }
-        .cs-content { margin: 0; }
-    }
-}
-
-/* Side By Side Reverse */
-@media only screen and (min-width: 0rem) {
-    #RPsbsr-313 {
-        background-color: var(--medium);
-        .cs-picture1 { left: auto; right: 0; }
-        .cs-picture2 { right: auto; left: 0; }
-        .cs-quote { background-color: rgba(0, 0, 0, 0.2); }
-    }
-}
-@media only screen and (min-width: 64rem) {
-    #RPsbsr-313 .cs-image-group { order: 2; }
-}
-
-/* Gallery */
-@media only screen and (min-width: 0rem) {
-    #gallery-48 {
-        padding: var(--sectionPadding); position: relative;
-        .cs-container { width: 100%; max-width: calc(1280 / 16 * 1rem); margin: auto; display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 6vw, 4rem); }
-        .cs-content { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; }
-        .cs-title { margin: 0; max-width: 20ch; color: #fff; }
-        .cs-image-group { font-size: min(1.1vw, 1em); width: 100%; padding: 0; margin: 0; display: flex; justify-content: space-between; align-items: flex-start; gap: clamp(0.5rem, 2vw, 1.25rem); }
-        .cs-row { width: 100%; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: clamp(0.5rem, 2vw, 1.25rem); }
-        .cs-picture { width: 100%; position: relative; display: block; border-radius: calc(8 / 16 * 1rem); overflow: hidden; img { position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: cover; } }
-        .cs-row-1 .cs-picture-1 { height: calc(567 / 16 * 1em); } .cs-row-1 .cs-picture-2 { height: calc(629 / 16 * 1em); } .cs-row-1 .cs-picture-3 { height: calc(512 / 16 * 1em); }
-        .cs-row-2 .cs-picture-1 { height: calc(492 / 16 * 1em); } .cs-row-2 .cs-picture-2 { height: calc(517 / 16 * 1em); } .cs-row-2 .cs-picture-3 { height: calc(629 / 16 * 1em); }
-        .cs-row-3 .cs-picture-1 { height: calc(625 / 16 * 1em); } .cs-row-3 .cs-picture-2 { height: calc(452 / 16 * 1em); } .cs-row-3 .cs-picture-3 { height: calc(629 / 16 * 1em); }
-    }
-}
-
-/* Reviews */
-@media only screen and (min-width: 0rem) {
-    #reviews-67 {
-        padding: var(--sectionPadding);
-        .cs-container { width: 100%; max-width: calc(1280 / 16 * 1rem); margin: auto; display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 6vw, 4rem); }
-        .cs-content { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; }
-        .cs-card-group { padding: 0; margin: 0; display: flex; flex-direction: column; column-gap: calc(20 / 16 * 1rem); row-gap: calc(64 / 16 * 1rem); }
-        .cs-item { text-align: left; list-style: none; width: 100%; max-width: calc(630 / 16 * 1rem); margin: calc(40 / 16 * 1rem) 0 0 0; padding: calc(60 / 16 * 1rem) clamp(1rem, 3.2vw, 2rem) 0; padding-bottom: clamp(2rem, 5.4vw, 2.5rem); box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.5); border-radius: calc(8 / 16 * 1rem); background: rgba(0,0,0,0.2); position: relative; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; box-sizing: border-box; &:last-of-type { margin-bottom: 0; } }
-        .cs-item-img { width: calc(80 / 16 * 1rem); height: calc(80 / 16 * 1rem); position: absolute; top: calc(-40 / 16 * 1rem); }
-        .cs-item-text { font-size: calc(16 / 16 * 1rem); line-height: 1.5em; margin: 0 0 calc(20 / 16 * 1rem); padding-bottom: calc(20 / 16 * 1rem); color: var(--bodyTextColorWhite); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .cs-info { width: 100%; margin: auto 0 0 0; display: flex; align-items: center; justify-content: space-between; }
-        .cs-flex-group { width: 100%; margin: 0; }
-        .cs-name { font-size: calc(16 / 16 * 1rem); line-height: 1.5em; font-weight: 700; width: 40%; margin: 0; display: block; color: var(--bodyTextColorWhite); }
-        .cs-desc { font-size: calc(14 / 16 * 1rem); font-weight: 400; color: var(--primaryLight); display: block; }
-        .cs-item-stars { width: calc(96 / 16 * 1rem); height: calc(16 / 16 * 1rem); }
-    }
-}
 @media only screen and (min-width: 48rem) {
-    #reviews-67 .cs-card-group { flex-direction: row; justify-content: space-between; }
+    #metrics-bar .metrics-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Services Block Style */
-@media only screen and (min-width: 0rem) {
-    #services-1191 { padding: var(--sectionPadding); box-sizing: border-box; }
-    #services-1191 .cs-container { max-width: 58.75rem; width: 100%; margin: auto; display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 6vw, 4rem); }
-    #services-1191 .cs-content { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
-    #services-1191 .cs-title { max-width: 20ch; color: #fff; }
-    #services-1191 .cs-wrapper { display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 6vw, 4rem); position: relative; }
-    #services-1191 .cs-image { width: 100%; max-width: 31.875rem; height: auto; display: block; position: relative; img { width: 100%; height: auto; } }
-    #services-1191 .cs-card-group { width: 100%; margin: 0; padding: 0; display: grid; justify-content: center; row-gap: 1rem; }
-    #services-1191 .cs-item { text-align: center; list-style: none; max-width: 23rem; width: 100%; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
-    #services-1191 .cs-picture { width: 5rem; height: 5rem; box-sizing: border-box; background-color: var(--medium); border-radius: 50%; display: flex; justify-content: center; align-items: center; position: relative; flex: none; }
-    #services-1191 .cs-icon { width: 1.875rem; height: auto; display: block; filter: invert(1); }
-    #services-1191 .cs-h3 { font-size: 1.25rem; line-height: 1.5em; margin: 0; margin-bottom: 0.5rem; color: #fff; text-align: inherit; }
-    #services-1191 .cs-item-text { font-size: clamp(0.875rem, 1.5vw, 1rem); line-height: 1.5em; margin: 0; color: #cbd5e1; text-align: inherit; }
+/* 3. PHILOSOPHY */
+#philosophy {
+    padding: var(--sectionPadding); background: #030508;
+
+    .phil-container {
+        max-width: 85rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem;
+    }
+
+    .phil-lead {
+        font-size: 1.15rem; color: var(--text-main); line-height: 1.6; font-weight: 300; margin-bottom: 1.5rem;
+    }
+
+    .phil-right .cs-text { margin-bottom: 1.25rem; }
 }
-@media only screen and (min-width: 48rem) {
-    #services-1191 .cs-card-group { display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    #services-1191 .cs-item { text-align: left; margin: 0; width: 32%; align-items: flex-start; }
-    #services-1191 .cs-image { max-height: 28.125rem; img { width: 100%; height: auto; max-height: 28.125rem; object-fit: contain; } }
-}
+
 @media only screen and (min-width: 64rem) {
-    #services-1191 .cs-container { max-width: 90rem; }
-    #services-1191 .cs-image { width: 30vw; display: flex; justify-content: center; align-items: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); img { width: auto; height: auto; } }
-    #services-1191 .cs-card-group { align-items: flex-start; justify-content: center; column-gap: clamp(11.25rem, 21vw, 22.25rem); row-gap: clamp(2.5rem, 8vw, 5.5rem); }
-    #services-1191 .cs-item { width: 32vw; max-width: 26.375rem; flex-direction: row; position: relative; }
-    #services-1191 .cs-item:nth-of-type(odd) { text-align: right; .cs-picture { order: 2; } }
-    #services-1191 .cs-item:nth-of-type(3) { left: calc(clamp(5.625rem, 8vw, 8rem) * -1); }
-    #services-1191 .cs-item:nth-of-type(4) { right: calc(clamp(5.625rem, 8vw, 8rem) * -1); }
+    #philosophy .phil-container { grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
+}
+
+/* 4. CAPABILITIES (MATTE BLACK CARDS) */
+#capabilities {
+    padding: var(--sectionPadding); background: #030508;
+    border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);
+
+    .cap-grid {
+        max-width: 85rem; margin: 3.5rem auto 0 auto; display: grid;
+        grid-template-columns: 1fr; gap: 2rem;
+    }
+
+    .cap-card {
+        background: var(--bg-card); border: 1px solid var(--border-subtle);
+        padding: 3rem 2rem; transition: all 0.3s ease; display: flex; flex-direction: column;
+        &:hover { border-color: var(--primary); transform: translateY(-4px); }
+    }
+
+    .cap-num {
+        font-family: var(--headerFont); color: var(--primary); font-size: 1.25rem; margin-bottom: 1rem;
+    }
+
+    .cap-card h3 {
+        font-family: var(--headerFont); font-size: 1.35rem; color: var(--text-main);
+        margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .cap-card p {
+        color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; margin: 0;
+    }
+
+    .cap-link {
+        display: inline-block; margin-top: 1.75rem; font-size: 0.75rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); text-decoration: none;
+        &:hover { color: #ffffff; }
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    #capabilities .cap-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 5. TARMAC SPOTLIGHT */
+#tarmac-spotlight {
+    padding: var(--sectionPadding); background: #030508;
+
+    .tarmac-wrapper {
+        max-width: 85rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+    }
+
+    .tarmac-img-box img {
+        width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover;
+        border: 1px solid var(--border-subtle); border-radius: 2px;
+    }
+
+    .tarmac-list { list-style: none; padding: 0; margin: 0; }
+    .tarmac-list li {
+        padding: 1rem 0; border-bottom: 1px solid var(--border-subtle);
+        color: var(--text-main); font-size: 0.95rem; line-height: 1.6; position: relative; padding-left: 1.75rem;
+        &::before { content: '—'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    #tarmac-spotlight .tarmac-wrapper { grid-template-columns: 1fr 1.1fr; gap: 6rem; }
+}
+
+/* 6. COMPLIANCE BANNER */
+#compliance-banner {
+    padding: 4rem 1.25rem; background: #030508; border-top: 1px solid var(--border-subtle);
+
+    .compliance-box { max-width: 60rem; margin: 0 auto; text-align: center; }
+}
+
+/* 7. FLIGHT BOOKING PORTAL (FIXED SAFARI FORM OVERFLOW) */
+#booking-portal {
+    padding: var(--sectionPadding); background: #030508;
+
+    .portal-card {
+        max-width: 58rem; width: 100%; margin: 0 auto; background: var(--bg-card);
+        border: 1px solid var(--border-glass); padding: clamp(1.75rem, 4vw, 3.5rem);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); box-sizing: border-box;
+    }
+
+    .portal-sub { color: var(--text-muted); text-align: center; margin-top: 0.5rem; font-size: 0.9rem; }
+
+    .portal-form {
+        display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2rem; width: 100%; box-sizing: border-box;
+    }
+
+    .form-group { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; }
+
+    .form-group label {
+        font-family: var(--bodyFont); font-size: 0.7rem; text-transform: uppercase;
+        letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600;
+    }
+
+    /* iOS Safari Fixes for Input Overflow & Black Date Boxes */
+    .portal-form input {
+        width: 100%; max-width: 100%; box-sizing: border-box; padding: 1rem;
+        background: #030508; border: 1px solid var(--border-subtle);
+        color: #ffffff; font-family: var(--bodyFont); font-size: 0.9rem; border-radius: 0;
+        -webkit-appearance: none; appearance: none; color-scheme: dark;
+        &:focus { outline: none; border-color: var(--primary); }
+    }
+
+    .portal-submit {
+        grid-column: 1 / -1; background: var(--primary);
+        color: #030508; border: none; padding: 1.25rem; font-family: var(--bodyFont); font-size: 0.8rem;
+        font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; margin-top: 1rem;
+        transition: all 0.3s ease; width: 100%; box-sizing: border-box;
+        &:hover { background: #ffffff; color: #030508; }
+    }
+
+    .portal-legal {
+        text-align: center; font-size: 0.7rem; color: #64748b; margin-top: 2rem;
+        line-height: 1.6; text-transform: uppercase; letter-spacing: 0.08em;
+        span { text-transform: none; display: block; margin-top: 0.5rem; font-size: 0.65rem; color: #475569; }
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+    #booking-portal .portal-form { grid-template-columns: repeat(2, 1fr); }
+    #booking-portal .full-width { grid-column: 1 / -1; }
 }

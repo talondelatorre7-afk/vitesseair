@@ -1,125 +1,98 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// CODESTITCH GLOBAL STYLES - JPT LLC (DEEP NAVY & GOLD)
+// VITESSE AIR - GLOBAL DESIGN SYSTEM & WORKING NAVIGATION
 // ─────────────────────────────────────────────────────────────────────────────
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 @media only screen and (min-width: 0px) {
     :root {
-        /* DEEP NAVY & GOLD PALETTE */
-        --primary: #C5A059;            /* Elite Gold */
-        --primaryLight: #D4AF37;       
-        --secondary: #0A192F;          /* Deep Navy Base */
-        --secondaryLight: #112240;     /* Light Navy Accent */
+        /* PURE MONOCHROME OBSIDIAN & GOLD */
+        --primary: #DFB15B;            /* Champagne Gold */
+        --primary-hover: #F4D38B;      
+        --bg-deep: #030508;            /* Pitch Black Void */
+        --bg-card: #0A0B0D;            /* Matte Black Surface */
+        --border-glass: rgba(223, 177, 91, 0.2);
+        --border-subtle: rgba(255, 255, 255, 0.08);
         
-        --headerColor: #ffffff;        
-        --bodyTextColor: #e2e8f0;      
-        --bodyTextColorWhite: #ffffff; 
+        --text-main: #F8FAFC;          /* Pure White */
+        --text-muted: #94A3B8;         /* Muted Slate */
+        
+        --topperFontSize: clamp(0.75rem, 1.5vw, 0.85rem);
+        --headerFontSize: clamp(2rem, 5vw, 4rem); 
+        --bodyFontSize: clamp(0.95rem, 1.2vw, 1.1rem);
+        --sectionPadding: clamp(4rem, 8vw, 8rem) 1.25rem;
 
-        --dark: #020c1b;               /* Deepest Navy / Near Black */
-        --medium: #0A192F;             
-        --accent: #112240;             
-        --abyss: #01060e;               
-
-        --topperFontSize: clamp(0.75rem, 1.5vw, 0.875rem);
-        --headerFontSize: clamp(2.5rem, 5vw, 4rem); 
-        --bodyFontSize: 1.125rem;
-        --sectionPadding: clamp(5rem, 10vw, 8rem) 1rem;
-
-        --headerFont: 'Montserrat', "Helvetica Neue", sans-serif; 
-        --bodyFont: 'Montserrat', "Inter", Arial, sans-serif;
+        --headerFont: 'Cinzel', serif; 
+        --bodyFont: 'Plus Jakarta Sans', sans-serif;
     }
 
     html, body {
         margin: 0; padding: 0; overflow-x: hidden;
         font-family: var(--bodyFont);
         font-size: 100%;
-        background-color: var(--dark);
-        color: var(--bodyTextColor);
+        background-color: var(--bg-deep);
+        color: var(--text-main);
+        scroll-behavior: smooth;
     }
 
     *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    .skip { display: none !important; }
+
     .cs-topper {
         font-size: var(--topperFontSize); line-height: 1.2em; text-transform: uppercase;
-        text-align: inherit; letter-spacing: 0.25em; font-weight: 700; color: var(--primary); 
-        margin-bottom: 1rem; display: block;
+        letter-spacing: 0.25em; font-weight: 600; color: var(--primary); 
+        margin-bottom: 1rem; display: block; font-family: var(--bodyFont);
     }
 
     .cs-title {
-        font-size: var(--headerFontSize); font-weight: 300; line-height: 1.2em;
-        text-align: inherit; max-width: 50rem; margin: 0 0 1.5rem 0; color: var(--headerColor);
-        position: relative; letter-spacing: 0.02em;
+        font-family: var(--headerFont);
+        font-size: var(--headerFontSize); font-weight: 500; line-height: 1.15em;
+        margin: 0 0 1.25rem 0; color: var(--text-main); letter-spacing: 0.02em;
     }
 
     .cs-text {
-        font-size: var(--bodyFontSize); line-height: 1.8em; text-align: inherit;
-        width: 100%; max-width: 45rem; margin: 0; color: var(--bodyTextColor);
+        font-size: var(--bodyFontSize); line-height: 1.7em;
+        width: 100%; max-width: 46rem; margin: 0; color: var(--text-muted);
     }
+
+    .cs-hide-on-mobile { display: none !important; }
 }
 
-@media only screen and (min-width: 0px) {
-    .skip { z-index: -1111111; position: absolute; top: 0; left: 0; opacity: 0; }
-
-    .cs-button-solid, .cs-button-outline {
-        z-index: 1; position: relative; display: inline-block; width: auto;
-        padding: 1.25rem 3rem; text-decoration: none; text-transform: uppercase;
-        font-size: 0.875rem; line-height: 1em; font-weight: 600; letter-spacing: 0.15em;
-        border-radius: 3px; overflow: hidden; text-align: center; transition: color 0.3s, background-color 0.3s;
-    }
-
-    .cs-button-solid {
-        background-color: var(--primary); color: #020c1b;
-        &:hover { color: #020c1b; &:before { width: 100%; } }
-        &:before {
-            z-index: -1; position: absolute; top: 0; left: 0; content: "";
-            display: block; background-color: #ffffff; height: 100%; width: 0; transition: width 0.4s ease;
-        }
-    }
-
-    .cs-button-outline {
-        border: 1px solid #ffffff; color: #ffffff;
-        &:hover { color: #020c1b; border-color: #ffffff; &:before { width: 100%; } }
-        &:before {
-            z-index: -1; position: absolute; top: 0; left: 0; content: "";
-            display: block; background-color: #ffffff; height: 100%; width: 0; transition: width 0.4s ease;
-        }
-    }
-}
-
-@media only screen and (min-width: 64rem) {
-    .cs-hide-on-mobile { display: block !important; }
+@media only screen and (min-width: 1024px) {
+    .cs-hide-on-mobile { display: inline-block !important; }
     .cs-hide-on-desktop { display: none !important; }
 }
 
+/* HIGH-END BUTTON STYLES (FULLY PRESERVED) */
 @media only screen and (min-width: 0px) {
-    h1, h2, h3, h4, h5, h6 { font-family: var(--headerFont); line-height: 1.2em; color: var(--headerColor); }
-    p, li, a { font-size: 1.125rem; line-height: 1.8em; }
-    p, li { color: var(--bodyTextColor); }
-    a { color: var(--primary); }
-    a, button { &:hover { cursor: pointer; } }
+    .cs-button-solid, .cs-button-outline {
+        z-index: 1; position: relative; display: inline-block; width: 100%; max-width: 20rem;
+        padding: 1.125rem 2.25rem; text-decoration: none; text-transform: uppercase;
+        font-size: 0.75rem; line-height: 1em; font-weight: 600; letter-spacing: 0.2em;
+        border-radius: 2px; text-align: center; transition: all 0.3s ease;
+        font-family: var(--bodyFont); box-sizing: border-box;
+    }
+
+    .cs-button-solid {
+        background: var(--primary);
+        color: #030508;
+        border: 1px solid var(--primary);
+        &:hover { background: #ffffff; color: #030508; border-color: #ffffff; }
+    }
+
+    .cs-button-outline {
+        border: 1px solid var(--border-glass); color: var(--text-main); background: rgba(255, 255, 255, 0.02);
+        &:hover { border-color: var(--primary); color: var(--primary); background: rgba(223, 177, 91, 0.05); }
+    }
 }
 
-#dark-mode-toggle { display: none !important; }
+@media only screen and (min-width: 48rem) {
+    .cs-button-solid, .cs-button-outline { width: auto; }
+}
 
 /* ----------------------------------------------------
-   CUSTOM LOGO & CTA STYLING
-------------------------------------------------------- */
-.cs-logo {
-    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-    text-decoration: none; margin-right: auto; padding: 0;
-}
-
-.header-cta {
-    background: var(--primary); color: #020c1b; border: none;
-    font-weight: 600; letter-spacing: 0.15em; font-family: 'Montserrat', sans-serif;
-    transition: 0.3s; padding: 1rem 2rem; text-decoration: none; text-transform: uppercase;
-    font-size: 0.75rem; border-radius: 3px;
-    &:hover { background: #ffffff; color: #020c1b; }
-}
-
-/* ----------------------------------------------------
-   MOBILE NAVIGATION
+   MOBILE NAVIGATION (Smooth ScaleX Animation & Scroll Blur)
 ------------------------------------------------------- */
 @media only screen and (max-width: 1023.5px) {
     body.cs-open { overflow: hidden; }
@@ -127,34 +100,56 @@
     .header-cta { display: none !important; }
 
     #cs-navigation {
-        width: 100%; box-sizing: border-box; padding: 0.5rem 1rem; 
-        background-color: #020c1b; border-bottom: 1px solid rgba(255,255,255,0.05);
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-        position: fixed; z-index: 10000;
+        width: 100%; box-sizing: border-box; padding: 0 1.25rem; 
+        background: transparent; border-bottom: 1px solid transparent;
+        position: fixed; top: 0; left: 0; z-index: 10000; height: 80px; display: flex; align-items: center;
+        transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
         
-        .cs-container { width: 100%; display: flex; justify-content: flex-end; align-items: center; height: 70px; }
+        /* Scroll Blur Integration */
+        &.scrolled {
+            background: rgba(3, 5, 8, 0.85);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-bottom-color: var(--border-glass);
+        }
+        
+        .cs-container { width: 100%; display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        
+        .cs-logo {
+            font-family: var(--headerFont); font-size: 1.25rem; font-weight: 600;
+            color: var(--text-main); text-decoration: none; letter-spacing: 0.2em; text-transform: uppercase;
+            z-index: 10001;
+            span { color: var(--primary); }
+        }
         
         .cs-toggle {
-            width: clamp(2.75rem, 6vw, 3rem); height: clamp(2.75rem, 6vw, 3rem);
+            width: 44px; height: 44px;
             margin: 0 0 0 auto; background-color: transparent; border: none;
-            display: flex; justify-content: center; align-items: center; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 10001;
+            padding: 0;
         }
-        .cs-box { width: clamp(1.5rem, 2vw, 1.75rem); height: clamp(0.875rem, 1.5vw, 1rem); position: relative; }
-        .cs-line { width: 100%; height: 2px; background-color: #ffffff; position: absolute; left: 50%; transform: translateX(-50%); transition: all 0.3s ease;}
+        .cs-box { width: 24px; height: 14px; position: relative; }
+        .cs-line { width: 100%; height: 2px; background-color: var(--text-main); position: absolute; left: 50%; transform: translateX(-50%); transition: all 0.3s ease;}
         .cs-line1 { top: 0; transform-origin: center; }
         .cs-line2 { top: 50%; transform: translateX(-50%) translateY(-50%); transform-origin: center; }
         .cs-line3 { bottom: 0; }
         
+        /* Smooth Top-Right ScaleX Transition */
         .cs-ul-wrapper {
-            height: 100vh; background-color: #0a192f; opacity: 0; position: absolute;
-            top: 100%; right: 0; left: 0; width: 100%; z-index: -1; overflow: hidden; 
-            transform: scaleX(0); transition: transform 0.4s, opacity 0.3s; transform-origin: top right;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            height: calc(100vh - 80px); background-color: #030508; opacity: 0; position: absolute;
+            top: 80px; right: 0; left: 0; width: 100%; z-index: -1; overflow: hidden; 
+            transform: scaleX(0); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; transform-origin: top right;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            visibility: hidden; pointer-events: none;
         }
         
+        /* ACTIVE STATE ANIMATION */
         &.cs-active {
-            .cs-line1 { top: 50%; transform: translate(-50%, -50%) rotate(225deg); }
-            .cs-line2 { top: 50%; transform: translate(-50%, -50%) translateY(0) rotate(-225deg); }
+            background-color: #030508 !important;
+            border-bottom-color: var(--border-subtle) !important;
+            
+            .cs-line1 { top: 50%; transform: translate(-50%, -50%) rotate(225deg); background-color: var(--primary); }
+            .cs-line2 { top: 50%; transform: translate(-50%, -50%) translateY(0) rotate(-225deg); background-color: var(--primary); }
             .cs-line3 { opacity: 0; bottom: 100%; }
             
             .cs-ul-wrapper {
@@ -162,6 +157,7 @@
                 visibility: visible !important;
                 transform: scaleX(1) !important;
                 z-index: 9999 !important;
+                pointer-events: auto !important;
             }
             .cs-li {
                 opacity: 1 !important;
@@ -172,48 +168,77 @@
         .cs-ul {
             width: 100%; min-width: 100%; height: 65vh; margin: 0;
             padding: 3rem 1.5rem; display: flex; flex-direction: column; 
-            justify-content: flex-start; align-items: center; gap: 1.5rem; overflow: scroll;
+            justify-content: flex-start; align-items: center; gap: 1.5rem; overflow-y: auto;
+            list-style: none;
         }
         .cs-li {
-            text-align: center; list-style: none; width: 100%; margin: 0; opacity: 0; transform: translateX(-2.5rem);
-            transition: transform 0.6s, opacity 0.9s;
+            text-align: center; list-style: none; width: 100%; margin: 0; opacity: 0; transform: translateX(-2rem);
+            transition: transform 0.5s ease, opacity 0.6s ease;
             &:nth-of-type(1) { transition-delay: 0.05s; }
             &:nth-of-type(2) { transition-delay: 0.1s; }
             &:nth-of-type(3) { transition-delay: 0.15s; }
             &:nth-of-type(4) { transition-delay: 0.2s; }
-            &:nth-of-type(5) { transition-delay: 0.25s; }
         }
         .cs-li-link {
-            font-size: clamp(1rem, 2.5vw, 1.5rem); line-height: 1.2em; text-decoration: none; margin: 0;
-            padding: 0.25rem; color: #ffffff; display: inline-block; position: relative; 
-            text-transform: uppercase; font-weight: 500; font-family: 'Montserrat', sans-serif;
-            &.cs-active { color: var(--primary); }
+            font-size: clamp(1rem, 2.5vw, 1.35rem); line-height: 1.2em; text-decoration: none; margin: 0;
+            padding: 0.25rem; color: var(--text-main); display: inline-block; position: relative; 
+            text-transform: uppercase; font-weight: 400; letter-spacing: 0.2em; font-family: var(--bodyFont);
+            transition: color 0.3s ease;
+            &.cs-active, &:hover { color: var(--primary); }
         }
     }
 }
 
 /* ----------------------------------------------------
-   DESKTOP NAVIGATION
+   DESKTOP NAVIGATION (1024px+)
 ------------------------------------------------------- */
 @media only screen and (min-width: 1024px) {
     #cs-navigation {
         width: 100%; box-sizing: border-box; padding: 0 3rem; 
-        background-color: rgba(2, 12, 27, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
-        -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px);
-        position: fixed; z-index: 10000; height: 100px; display: flex; align-items: center;
+        background-color: transparent; border-bottom: 1px solid transparent;
+        position: fixed; top: 0; left: 0; z-index: 10000; height: 90px; display: flex; align-items: center;
+        transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
         
-        .cs-container { width: 100%; max-width: 90rem; margin: auto; display: flex; justify-content: flex-end; align-items: center; gap: 2rem; }
+        /* Scroll Blur Integration */
+        &.scrolled {
+            background: rgba(3, 5, 8, 0.85);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-bottom-color: var(--border-glass);
+        }
+        
+        .cs-container { width: 100%; max-width: 85rem; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .cs-logo {
+            font-family: var(--headerFont); font-size: 1.25rem; font-weight: 600;
+            color: var(--text-main); text-decoration: none; letter-spacing: 0.2em; text-transform: uppercase;
+            z-index: 10001;
+            span { color: var(--primary); }
+        }
+
         .cs-toggle { display: none; }
         
-        .cs-ul { width: 100%; margin: 0; padding: 0; display: flex; justify-content: flex-end; align-items: center; gap: 3rem; }
-        .cs-li { list-style: none; padding: 0; flex: none; }
+        .cs-ul-wrapper {
+            position: static; width: auto; height: auto; background: transparent;
+            opacity: 1 !important; visibility: visible !important; transform: none !important;
+            display: flex !important; padding: 0; overflow: visible; z-index: auto;
+        }
+
+        .cs-ul { width: 100%; margin: 0; padding: 0; display: flex; justify-content: flex-end; align-items: center; gap: 3rem; list-style: none; }
+        .cs-li { list-style: none; padding: 0; flex: none; opacity: 1 !important; transform: none !important; }
         .cs-li-link {
-            font-size: 0.875rem; line-height: 1.5em; text-decoration: none; margin: 0;
-            color: #e2e8f0; display: block; position: relative; text-transform: uppercase; 
-            font-weight: 600; letter-spacing: 0.15em; transition: color 0.3s; font-family: 'Montserrat', sans-serif;
-            &:hover { color: var(--primary); }
-            &.cs-active { color: var(--primary); }
+            font-size: 0.75rem; line-height: 1.5em; text-decoration: none; margin: 0;
+            color: var(--text-muted); display: block; position: relative; text-transform: uppercase; 
+            font-weight: 600; letter-spacing: 0.15em; transition: color 0.3s ease; font-family: var(--bodyFont);
+            &:hover, &.cs-active { color: var(--primary); }
+        }
+
+        .header-cta {
+            background: transparent; border: 1px solid var(--primary); color: var(--primary);
+            padding: 0.75rem 1.75rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; text-decoration: none; border-radius: 2px;
+            transition: all 0.3s ease; display: inline-block !important;
+            &:hover { background: var(--primary); color: #030508; }
         }
     }
 }

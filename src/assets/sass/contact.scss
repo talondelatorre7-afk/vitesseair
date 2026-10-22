@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// JPT LLC - CONTACT PAGE STYLES
+// VITESSE AIR - CONTACT PAGE STYLES
 // ─────────────────────────────────────────────────────────────────────────────
 
 @media only screen and (min-width: 0rem) {
@@ -8,7 +8,6 @@
     #cs-contact-265 { 
         background: #020c1b; 
         color: #ffffff; 
-        /* Fluid padding: smaller on mobile, larger on desktop to clear header */
         padding-top: clamp(8rem, 15vw, 12rem);
         padding-bottom: var(--sectionPadding);
         padding-left: 1rem;
@@ -90,7 +89,6 @@
                 resize: vertical;
             }
 
-            /* Forces these elements to span full width */
             .cs-label-message, 
             .opt-in-wrapper, 
             #submit-btn,
@@ -191,10 +189,9 @@
             margin: 0;
             
             &:hover { color: var(--primary); }
-            &:before { display: none; } /* Kills the old CodeStitch underline */
+            &:before { display: none; }
         }
 
-        /* FORM STATUS ALERTS */
         #form-status { 
             font-weight: 700; 
             text-align: center; 
