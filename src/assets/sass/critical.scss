@@ -1,0 +1,183 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// CRITICAL PAGE STYLES (DEEP NAVY & GOLD)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-clean {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1rem;
+        background: #020c1b; 
+        overflow: hidden;
+        border-bottom: 4px solid var(--primary);
+    }
+    
+    #hero-clean .cs-background {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+    }
+    #hero-clean .cs-background::after {
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(2, 12, 27, 0.75); 
+        z-index: 2;
+    }
+    #hero-clean video { width: 100%; height: 100%; object-fit: cover; }
+    
+    #hero-clean .cs-container { position: relative; z-index: 3; max-width: 60rem; margin: 0 auto; padding-top: 5rem;}
+    #hero-clean .cs-title { color: #ffffff; margin: 0 auto 1.5rem auto; font-size: clamp(2.5rem, 6vw, 5.5rem); letter-spacing: 0.02em; font-weight: 300; line-height: 1.1;}
+    #hero-clean .cs-text { color: #cbd5e1; font-size: 1.25rem; margin: 0 auto 3rem auto; max-width: 45rem; letter-spacing: 0.05em; line-height: 1.8;}
+    
+    .cs-button-group { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-hero-solid { background: var(--primary); color: #020c1b; border: 1px solid var(--primary); margin: 0;}
+    .btn-hero-solid:hover { background: #ffffff; color: #020c1b; border-color: #ffffff;}
+}
+
+/* Standalone Video & Parallax Handlers */
+.cs-standalone-video {
+    position: relative; display: block; width: 100%; max-width: calc(522 / 16 * 1em); 
+    height: auto; aspect-ratio: 522 / 581; margin: 0 auto; 
+    border-radius: calc(24 / 16 * 1em); overflow: hidden; background-color: #020c1b; 
+
+    .cs-video-element {
+        position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+        object-fit: cover; object-position: center; border: none;
+    }
+}
+
+/* Desktop - 1300px (To make image background parallax) */
+@media only screen and (min-width: 81.25rem) {
+    #hero-143 {
+        background: url("/assets/images/jet-hero.mp4");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* makes the parallax effect */
+        background-attachment: fixed;
+
+        .cs-background {
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #h-services-143 {
+        /* 40px - 100px */
+        padding: 0 calc(16 / 16 * 1em) clamp(2.5rem, 7.9vw, 6.25rem) calc(16 / 16 * 1rem);
+        position: relative;
+        /* give a higher z index than the hero so it can sit on top */
+        z-index: 10;
+
+        .cs-card-group {
+            width: 100%;
+            max-width: calc(465 / 16 * 1rem);
+            margin: 0 auto 0;
+            /* negative margin pulls it up on top of the hero section */
+            margin-top: calc(clamp(5rem, 13vw, 4.75rem) * -1);
+            padding: clamp(2.5rem, 4.7vw, 3.75rem) clamp(1rem, 5.3vw, 2.75rem);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+            border-radius: calc(5 / 16 * 1rem);
+            border-top: 8px solid var(--primary);
+            background-color: var(--medium);
+            box-sizing: border-box;
+        }
+
+        .cs-item {
+            list-style: none;
+            margin: 0 auto calc(32 / 16 * 1rem);
+            width: 100%;
+            max-width: calc(360 / 16 * 1rem);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .cs-icon {
+            width: clamp(4.25rem, 8.8vw, 5.5rem);
+            height: clamp(4.25rem, 8.8vw, 5.5rem);
+            margin: auto;
+            margin-bottom: clamp(1.25rem, 5vw, 1.5rem);
+            background: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: clamp(2.75rem, 5.8vw, 3.25rem);
+                height: auto;
+                filter: invert(1);
+            }
+        }
+
+        .cs-title {
+            font-size: calc(20 / 16 * 1rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 auto calc(8 / 16 * 1rem);
+            color: #ffffff;
+        }
+
+        .cs-text {
+            font-size: calc(16 / 16 * 1rem);
+            text-align: center;
+            line-height: 1.5em;
+            max-width: calc(360 / 16 * 1rem);
+            margin: 0 auto;
+            color: #cbd5e1;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #h-services-143 {
+        .cs-card-group {
+            max-width: calc(784 / 16 * 1rem);
+            margin-top: calc(clamp(4.75rem, 20vw, 20rem) * -1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: calc(40 / 16 * 1rem);
+        }
+
+        .cs-item {
+            width: 45%;
+            max-width: calc(314 / 16 * 1rem);
+            &:last-of-type {
+                margin-bottom: calc(32 / 16 * 1rem);
+            }
+        }
+    }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #h-services-143 {
+        .cs-card-group {
+            max-width: calc(1280 / 16 * 1rem);
+            flex-wrap: nowrap;
+        }
+
+        .cs-item {
+            margin: 0;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
