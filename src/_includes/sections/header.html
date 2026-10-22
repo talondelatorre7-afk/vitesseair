@@ -41,27 +41,30 @@
     </div>
 </header>
 
-<!-- DIRECT SCRIPT TO POWER THE BURGER & ANIMATION -->
+<!-- FIXED SCRIPT WITH MOBILE-ONLY INERT CHECK -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const nav = document.getElementById('cs-navigation');
         const toggle = document.getElementById('cs-toggle');
         const wrapper = document.getElementById('cs-ul-wrapper');
+        const isMobile = () => window.matchMedia('(max-width: 1023.5px)').matches;
 
         if (toggle && nav) {
             toggle.addEventListener('click', () => {
                 nav.classList.toggle('cs-active');
                 const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
                 toggle.setAttribute('aria-expanded', !isExpanded);
-                if (wrapper) wrapper.inert = isExpanded;
+                if (wrapper && isMobile()) wrapper.inert = isExpanded;
             });
 
-            // Close menu when clicking any nav link
+            // Close menu and toggle inert only on mobile when a link is clicked
             document.querySelectorAll('.cs-li-link').forEach(link => {
                 link.addEventListener('click', () => {
-                    nav.classList.remove('cs-active');
-                    toggle.setAttribute('aria-expanded', 'false');
-                    if (wrapper) wrapper.inert = true;
+                    if (isMobile()) {
+                        nav.classList.remove('cs-active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        if (wrapper) wrapper.inert = true;
+                    }
                 });
             });
         }
